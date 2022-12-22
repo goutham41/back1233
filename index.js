@@ -20,12 +20,12 @@ app.use(cookieParser());
 app.use(express.static("images"));
 
 const server = http.createServer(app);
-const io = require("socket.io")(server, {
-  cors: {
-    origin: "*",
-    methods: ["GET", "POST"],
-  },
-});
+// const io = require("socket.io")(server, {
+//   cors: {
+//     origin: "*",
+//     methods: ["GET", "POST"],
+//   },
+// });
 // let activeUsers = [];
 
 // io.on("connection", (socket) => {
@@ -71,7 +71,7 @@ app.use("/search", require("./Routes/Abha_endpoints/search.routes"));
 app.use("/consentPin", require("./Routes/consent_pin/consent_pin.routes"));
 app.use("/payment", require("./Routes/Payment/payment.routes"));
 app.use("/cart", require("./Routes/shop_endpoints/User_cart"));
-app.use("/chat", require("./Routes/ChatWithDoctor/chat.routes"));
+// app.use("/chat", require("./Routes/ChatWithDoctor/chat.routes"));
 app.use("/images", express.static("images"));
 app.use("/image", require("./Routes/Expert/uploadsImages.routes"));
 app.use("/notifty", require("./Routes/notify/notify.routes"));
